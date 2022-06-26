@@ -9,12 +9,12 @@ const Header = () => {
                     <img width="38" src={pizzaLogo} alt="Pizza logo" />
                     <div>
                         <h1>Midas Pizza</h1>
-                        <p>самая вкусная пицца во вселенной</p>
+                        <p>Pizza made with golden hands</p>
                     </div>
                 </div>
                 <div className="header__cart">
                     <a href="/cart.html" className="button button--cart">
-                        <span>520 ₽</span>
+                        <span>32.5 €</span>
                         <div className="button__delimiter"></div>
                         <svg
                             width="18"

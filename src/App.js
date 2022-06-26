@@ -7,6 +7,7 @@ import PizzaItem from "./Components/PizzaItem";
 import pizza from "./assets/pizzaItems.json";
 
 function App() {
+
     return (
         <div className="wrapper">
             <Header />
@@ -16,10 +17,10 @@ function App() {
                         <Categories />
                         <Sort />
                     </div>
-                    <h2 className="content__title">Все пиццы</h2>
+                    <h2 className="content__title">All pizzas</h2>
                     <div className="content__items">
-                        {pizza.map((el) => {
-                            return <PizzaItem {...el} />;
+                        {pizza.map((el,index) => {
+                            return <PizzaItem key={index} {...el} />;
                         })}
                     </div>
                 </div>

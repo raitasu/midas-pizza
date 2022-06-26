@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const PizzaItem = ({ title, imageUrl, price, sizes, types }) => {
-    const typesPizza = ["Тонкое", "Традиционное"];
+    const typesPizza = ["Subtle", "Traditional"];
     const [indexType, setIndexType] = React.useState(0);
     const [indexSize, setIndexSize] = React.useState(0);
 
@@ -12,7 +12,7 @@ const PizzaItem = ({ title, imageUrl, price, sizes, types }) => {
             <div className="pizza-block__selector">
                 <ul>
                     {types.map((el, i) => (
-                        <li
+                        <li key={i}
                             className={indexType === i ? "active" : ""}
                             onClick={() => setIndexType(i)}
                         >
@@ -22,7 +22,7 @@ const PizzaItem = ({ title, imageUrl, price, sizes, types }) => {
                 </ul>
                 <ul>
                     {sizes.map((el, i) => (
-                        <li
+                        <li key={i}
                             className={indexSize === i ? "active" : ""}
                             onClick={() => setIndexSize(i)}
                         >
@@ -32,7 +32,7 @@ const PizzaItem = ({ title, imageUrl, price, sizes, types }) => {
                 </ul>
             </div>
             <div className="pizza-block__bottom">
-                <div className="pizza-block__price">от {price} ₽</div>
+                <div className="pizza-block__price">от {price} €</div>
                 <div className="button button--outline button--add">
                     <svg
                         width="12"
@@ -46,7 +46,7 @@ const PizzaItem = ({ title, imageUrl, price, sizes, types }) => {
                             fill="white"
                         />
                     </svg>
-                    <span>Добавить</span>
+                    <span>Add</span>
                     <i>0</i>
                 </div>
             </div>

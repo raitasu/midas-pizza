@@ -1,6 +1,12 @@
 import React from "react";
 
 const Sort = () => {
+
+    const [toggle, setToggle] = React.useState(true)
+    const sort = ['popularity', 'price', 'alphabetically']
+    const [sortItem, setSortItem] = React.useState(sort[0])
+
+
     return (
         <div className="sort">
             <div className="sort__label">
@@ -16,16 +22,23 @@ const Sort = () => {
                         fill="#2C2C2C"
                     />
                 </svg>
-                <b>Сортировка по:</b>
-                <span>популярности</span>
+                <b>Sorting by:</b>
+                <span onClick={() => {
+                    setToggle(!toggle)
+                }}>{sortItem}</span>
             </div>
-            <div className="sort__popup">
+            {toggle ? <div className="sort__popup">
                 <ul>
-                    <li className="active">популярности</li>
-                    <li>цене</li>
-                    <li>алфавиту</li>
+                    {sort.map((sortElement, index) => {
+                        return <li key={index} onClick={() => {
+                            setSortItem(sortElement)
+                            setToggle(!toggle)
+                        }}>{sortElement}</li>
+                    })}
                 </ul>
-            </div>
+            </div> : ''}
+
+
         </div>
     );
 };
