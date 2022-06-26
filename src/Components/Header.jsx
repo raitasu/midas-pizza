@@ -1,12 +1,12 @@
-import React from 'react';
-import pizzaLogo from '../assets/img/pizza-logo.webp'
+import React from "react";
+import pizzaLogo from "../assets/img/pizza-logo.webp";
 
 const Header = () => {
     return (
         <div className="header">
             <div className="container">
                 <div className="header__logo">
-                    <img width="38" src={pizzaLogo} alt="Pizza logo"/>
+                    <img width="38" src={pizzaLogo} alt="Pizza logo" />
                     <div>
                         <h1>Midas Pizza</h1>
                         <p>самая вкусная пицца во вселенной</p>
@@ -50,7 +50,6 @@ const Header = () => {
                 </div>
             </div>
         </div>
-
     );
 };
 

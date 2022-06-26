@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Sort = () => {
     return (
@@ -27,7 +27,6 @@ const Sort = () => {
                 </ul>
             </div>
         </div>
-
     );
 };
 

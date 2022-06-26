@@ -1,29 +1,34 @@
-import React, {useState} from 'react';
+import React, { useState } from "react";
 
-const PizzaItem = ({title, pizzaUrl, price, arraySizes, types}) => {
-
-
-    const typesPizza = ['Тонкое', 'Традиционное']
-    const [indexType, setIndexType] = React.useState(0)
-    const [indexSize, setIndexSize] = React.useState(0)
+const PizzaItem = ({ title, imageUrl, price, sizes, types }) => {
+    const typesPizza = ["Тонкое", "Традиционное"];
+    const [indexType, setIndexType] = React.useState(0);
+    const [indexSize, setIndexSize] = React.useState(0);
 
     return (
         <div className="pizza-block">
-            <img
-                className="pizza-block__image"
-                src={pizzaUrl}
-                alt="Pizza"
-            />
+            <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
             <h4 className="pizza-block__title">{title}</h4>
             <div className="pizza-block__selector">
                 <ul>
-                    {types.map((el, i) => <li className={indexType === i ? 'active' : ''}
-                                              onClick={() => setIndexType(i)}>{typesPizza[el]}</li>)}
+                    {types.map((el, i) => (
+                        <li
+                            className={indexType === i ? "active" : ""}
+                            onClick={() => setIndexType(i)}
+                        >
+                            {typesPizza[el]}
+                        </li>
+                    ))}
                 </ul>
                 <ul>
-                    {arraySizes.map((el, i) => <li className={indexSize === i ? 'active' : ''}
-                                                   onClick={() => setIndexSize(i)}>{el} см.</li>)}
-
+                    {sizes.map((el, i) => (
+                        <li
+                            className={indexSize === i ? "active" : ""}
+                            onClick={() => setIndexSize(i)}
+                        >
+                            {el} см.
+                        </li>
+                    ))}
                 </ul>
             </div>
             <div className="pizza-block__bottom">
@@ -46,10 +51,7 @@ const PizzaItem = ({title, pizzaUrl, price, arraySizes, types}) => {
                 </div>
             </div>
         </div>
-
     );
 };
 
 export default PizzaItem;
-
-
