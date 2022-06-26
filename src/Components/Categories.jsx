@@ -1,12 +1,13 @@
 import React from "react";
 
-const Categories = () => {
+const Categories = (props) => {
     const [activeIndex, setActiveIndex] = React.useState(0);
 
     const categories = ["All", "Meat", "Vegetarian", "Grill", "Spicy", "Closed"];
 
-    const changeIndexValue = (index) => {
+    const changeIndexValue = (index, category) => {
         setActiveIndex(index);
+        props.setPizzaCategory(category)
     };
 
     return (
@@ -16,7 +17,7 @@ const Categories = () => {
                     return (
                         <li key={index}
                             className={activeIndex === index ? "active" : ""}
-                            onClick={() => changeIndexValue(index)}
+                            onClick={() => changeIndexValue(index, category)}
                         >
                             {category}
                         </li>
