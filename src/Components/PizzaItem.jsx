@@ -1,32 +1,33 @@
 import React, {useState} from 'react';
 
-const PizzaItem = (props) => {
+const PizzaItem = ({title, pizzaUrl, price, arraySizes, types}) => {
 
 
-    const [countPizza, setPizzaCount] = useState(2)
+    const typesPizza = ['Тонкое', 'Традиционное']
+    const [indexType, setIndexType] = React.useState(0)
+    const [indexSize, setIndexSize] = React.useState(0)
+
     return (
         <div className="pizza-block">
             <img
                 className="pizza-block__image"
-                src={props.pizza}
+                src={pizzaUrl}
                 alt="Pizza"
             />
-            <h4 className="pizza-block__title">{props.title}</h4>
+            <h4 className="pizza-block__title">{title}</h4>
             <div className="pizza-block__selector">
                 <ul>
-                    <li className="active">тонкое</li>
-                    <li>традиционное</li>
+                    {types.map((el, i) => <li className={indexType === i ? 'active' : ''}
+                                              onClick={() => setIndexType(i)}>{typesPizza[el]}</li>)}
                 </ul>
                 <ul>
-                    <li className="active">26 см.
-                    </li
-                    >
-                    <li>30 см.</li>
-                    <li>40 см.</li>
+                    {arraySizes.map((el, i) => <li className={indexSize === i ? 'active' : ''}
+                                                   onClick={() => setIndexSize(i)}>{el} см.</li>)}
+
                 </ul>
             </div>
             <div className="pizza-block__bottom">
-                <div className="pizza-block__price">от 395 ₽</div>
+                <div className="pizza-block__price">от {price} ₽</div>
                 <div className="button button--outline button--add">
                     <svg
                         width="12"
@@ -40,8 +41,8 @@ const PizzaItem = (props) => {
                             fill="white"
                         />
                     </svg>
-                    <span onClick={()=>{setPizzaCount(countPizza+1)}}>Добавить</span>
-                    <i>{countPizza}</i>
+                    <span>Добавить</span>
+                    <i>0</i>
                 </div>
             </div>
         </div>
@@ -50,3 +51,5 @@ const PizzaItem = (props) => {
 };
 
 export default PizzaItem;
+
+
