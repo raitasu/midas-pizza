@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/midas-pizza/static/css/main.d655fb8b.css",
+    "main.js": "/midas-pizza/static/js/main.973e8b13.js",
+    "static/js/787.28cb0dcd.chunk.js": "/midas-pizza/static/js/787.28cb0dcd.chunk.js",
+    "static/media/pizza-logo.webp": "/midas-pizza/static/media/pizza-logo.78f0362667334147f280.webp",
+    "index.html": "/midas-pizza/index.html",
+    "main.d655fb8b.css.map": "/midas-pizza/static/css/main.d655fb8b.css.map",
+    "main.973e8b13.js.map": "/midas-pizza/static/js/main.973e8b13.js.map",
+    "787.28cb0dcd.chunk.js.map": "/midas-pizza/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.d655fb8b.css",
+    "static/js/main.973e8b13.js"
+  ]
+}
