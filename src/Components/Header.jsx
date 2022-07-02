@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <div className="header">
             <div className="container">
-                <NavLink to="/">
+                <NavLink to="/midas-pizza/">
                     <div className="header__logo">
                         <img width="38" src={pizzaLogo} alt="Pizza logo"/>
 
