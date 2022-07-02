@@ -6,9 +6,12 @@ const Sort = () => {
     const sort = ['popularity', 'price', 'alphabetically']
     const [sortItem, setSortItem] = React.useState(sort[0])
 
-    const onClickHandler = (sortElement) => {
+    const onClickChoiceSort = (sortElement) => {
         setSortItem(sortElement)
         setToggle(false)
+    }
+    const onClickToggleSort = () => {
+        setToggle(!toggle)
     }
     return (
         <div className="sort">
@@ -26,16 +29,14 @@ const Sort = () => {
                     />
                 </svg>
                 <b>Sorting by:</b>
-                <span tabIndex={1}
-                    onBlur={()=> setToggle(false)}
-                    onClick={() => {
-                    setToggle(!toggle)
-                }}>{sortItem}</span>
+                <span tabIndex={0}
+                      onClick={onClickToggleSort}
+                >{sortItem}</span>
             </div>
             {toggle ? <div className="sort__popup">
                 <ul>
                     {sort.map((sortElement, index) => {
-                        return <li key={index} onClick={() => onClickHandler(sortElement)}>{sortElement}</li>
+                        return <li key={index} onClick={() => onClickChoiceSort(sortElement)}>{sortElement}</li>
                     })}
                 </ul>
             </div> : ''}

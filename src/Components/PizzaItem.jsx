@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
-const PizzaItem = ({ title, imageUrl, price, sizes, types }) => {
+const PizzaItem = ({title, imageUrl, price, sizes, types}) => {
     const typesPizza = ["Subtle", "Traditional"];
     const [indexType, setIndexType] = React.useState(0);
     const [indexSize, setIndexSize] = React.useState(0);
 
     return (
         <div className="pizza-block">
-            <img className="pizza-block__image" src={imageUrl} alt="Pizza" />
+            <img className="pizza-block__image" src={imageUrl} alt="Pizza"/>
             <h4 className="pizza-block__title">{title}</h4>
             <div className="pizza-block__selector">
                 <ul>
