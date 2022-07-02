@@ -1,6 +1,6 @@
 import React from "react";
 
-const PizzaItem = ({title, imageUrl, price, sizes, types}) => {
+const Index = ({title, imageUrl, price, sizes, types}) => {
     const typesPizza = ["Subtle", "Traditional"];
     const [indexType, setIndexType] = React.useState(0);
     const [indexSize, setIndexSize] = React.useState(0);
@@ -54,4 +54,4 @@ const PizzaItem = ({title, imageUrl, price, sizes, types}) => {
     );
 };
 
-export default PizzaItem;
+export default Index;
