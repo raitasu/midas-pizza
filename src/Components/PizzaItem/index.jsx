@@ -5,7 +5,7 @@ const Index = ({title, imageUrl, price, sizes, types}) => {
     const [indexType, setIndexType] = React.useState(0);
     const [indexSize, setIndexSize] = React.useState(0);
 
-    return (
+    return (<div className={"pizza-block-wrapper"}>
         <div className="pizza-block">
             <img className="pizza-block__image" src={imageUrl} alt="Pizza"/>
             <h4 className="pizza-block__title">{title}</h4>
@@ -50,6 +50,7 @@ const Index = ({title, imageUrl, price, sizes, types}) => {
                     <i>0</i>
                 </div>
             </div>
+        </div>
         </div>
     );
 };
