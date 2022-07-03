@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/midas-pizza/static/css/main.07492bb6.css",
-    "main.js": "/midas-pizza/static/js/main.9493f648.js",
+    "main.css": "/midas-pizza/static/css/main.1d33b042.css",
+    "main.js": "/midas-pizza/static/js/main.67bf8dde.js",
     "static/js/787.28cb0dcd.chunk.js": "/midas-pizza/static/js/787.28cb0dcd.chunk.js",
     "static/media/pizza-logo.webp": "/midas-pizza/static/media/pizza-logo.78f0362667334147f280.webp",
     "index.html": "/midas-pizza/index.html",
-    "main.07492bb6.css.map": "/midas-pizza/static/css/main.07492bb6.css.map",
-    "main.9493f648.js.map": "/midas-pizza/static/js/main.9493f648.js.map",
+    "main.1d33b042.css.map": "/midas-pizza/static/css/main.1d33b042.css.map",
+    "main.67bf8dde.js.map": "/midas-pizza/static/js/main.67bf8dde.js.map",
     "787.28cb0dcd.chunk.js.map": "/midas-pizza/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.07492bb6.css",
-    "static/js/main.9493f648.js"
+    "static/css/main.1d33b042.css",
+    "static/js/main.67bf8dde.js"
   ]
 }
