@@ -2,6 +2,8 @@ import React from 'react';
 import {NavLink} from "react-router-dom";
 
 const Cart = () => {
+
+    const num = parseInt('30.4')
     return (<div className="container container--cart">
 
             <div className="cart">

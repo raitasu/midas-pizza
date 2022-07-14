@@ -1,13 +1,12 @@
 import React from "react";
 
-const Sort = () => {
+const Sort = (props) => {
 
     const [toggle, setToggle] = React.useState(false)
     const sort = ['popularity', 'price', 'alphabetically']
-    const [sortItem, setSortItem] = React.useState(sort[0])
 
     const onClickChoiceSort = (sortElement) => {
-        setSortItem(sortElement)
+        props.onClickSort(sortElement)
         setToggle(false)
     }
     const onClickToggleSort = () => {
@@ -31,7 +30,7 @@ const Sort = () => {
                 <b>Sorting by:</b>
                 <span tabIndex={0}
                       onClick={onClickToggleSort}
-                >{sortItem}</span>
+                >{props.sortItem}</span>
             </div>
             {toggle ? <div className="sort__popup">
                 <ul>

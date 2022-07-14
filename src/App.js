@@ -9,16 +9,15 @@ import Cart from "./Components/pages/Cart";
 
 function App() {
 
-
     return (
         <div className="wrapper">
             <Header/>
             <div className="content">
-                    <Routes>
-                        <Route path={'/midas-pizza'} element={<Main/>}/>
-                        <Route path={'/cart'} element={<Cart/>}/>
-                        <Route path={'*'} element={<NotFound/>}/>
-                    </Routes>
+                <Routes>
+                    <Route path={'/midas-pizza'} element={<Main/>}/>
+                    <Route path={'/cart'} element={<Cart/>}/>
+                    <Route path={'*'} element={<NotFound/>}/>
+                </Routes>
             </div>
         </div>
     );
