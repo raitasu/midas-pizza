@@ -5,8 +5,7 @@ const Categories = (props) => {
     const categories = ["All", "Meat", "Vegetarian", "Grill", "Spicy", "Closed"];
 
     const changeIndexValue = (index, category) => {
-        props.onClickCategory(index);
-        props.setPizzaCategory(category)
+        props.onClickCategory(index,category);
     };
 
     return (

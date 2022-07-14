@@ -3,10 +3,14 @@ import React from "react";
 const Sort = (props) => {
 
     const [toggle, setToggle] = React.useState(false)
-    const sort = ['popularity', 'price', 'alphabetically']
+    const sort = [
+        {name: 'popularity', sortProperty: 'rating'},
+        {name: 'price', sortProperty: 'price'},
+        {name: 'alphabetically', sortProperty: 'title'}
+    ]
 
-    const onClickChoiceSort = (sortElement) => {
-        props.onClickSort(sortElement)
+    const onClickChoiceSort = (sortValue) => {
+        props.onChangeSort(sortValue)
         setToggle(false)
     }
     const onClickToggleSort = () => {
@@ -28,14 +32,12 @@ const Sort = (props) => {
                     />
                 </svg>
                 <b>Sorting by:</b>
-                <span tabIndex={0}
-                      onClick={onClickToggleSort}
-                >{props.sortItem}</span>
+                <span onClick={onClickToggleSort}>{props.value.name}</span>
             </div>
             {toggle ? <div className="sort__popup">
                 <ul>
-                    {sort.map((sortElement, index) => {
-                        return <li key={index} onClick={() => onClickChoiceSort(sortElement)}>{sortElement}</li>
+                    {sort.map((obj, index) => {
+                        return <li key={index} onClick={() => onClickChoiceSort(obj)}>{obj.name}</li>
                     })}
                 </ul>
             </div> : ''}
