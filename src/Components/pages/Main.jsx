@@ -14,12 +14,16 @@ const Main = () => {
         name: 'popularity',
         sortProperty: 'rating'
     })
-
+    const [sortDirection, setSortDirection] = React.useState(false)
+    const onChangeSortDirection = () => {
+        setSortDirection(!sortDirection)
+    }
     const onClickCategory = (i, category) => {
         setCategoryId(i)
         setPizzaCategory(category)
 
     }
+
     const onChangeSort = (sortValue) => {
 
         setSortType(sortValue)
@@ -27,14 +31,14 @@ const Main = () => {
 
     React.useEffect(() => {
         setIsLoading(true)
-        fetch(`https://62bf82520bc9b125616e79b6.mockapi.io/pizza/items?${categoryId > 0 ? `category=${categoryId}` : ''}&sortBy=${sortType.sortProperty}`)
+        fetch(`https://62bf82520bc9b125616e79b6.mockapi.io/pizza/items?${categoryId > 0 ? `category=${categoryId}&order=${sortDirection ? 'desc' : 'ask'}` : ''}&sortBy=${sortType.sortProperty}&order=${sortDirection ? 'desc' : 'ask'}`)
             .then(response => response.json())
             .then(json => {
                 (setItems(json))
                 setIsLoading(false)
             })
         window.scrollTo(0, 0)
-    }, [categoryId, sortType])
+    }, [categoryId, sortType, sortDirection])
 
 
     return (
@@ -43,7 +47,7 @@ const Main = () => {
             <div className="content__top">
                 <Categories activeIndex={categoryId}
                             onClickCategory={onClickCategory}/>
-                <Sort value={sortType} onChangeSort={onChangeSort}/>
+                <Sort value={sortType} onChangeSort={onChangeSort} onChangeSortDirection={onChangeSortDirection} sortDirection={sortDirection}/>
             </div>
             <h2 className="content__title">{pizzaCategory + ' pizzas'}</h2>
             <div className="content__items">
